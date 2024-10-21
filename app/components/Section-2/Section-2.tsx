@@ -61,6 +61,7 @@ const SwiperComponent = () => {
     updateSlider();
   }, [currentIndex, slideWidth]);
 
+
   return (
     <div className={styles.box} id="services">
       <div className={styles.swipercontainer}>
