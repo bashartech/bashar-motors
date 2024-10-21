@@ -3,7 +3,7 @@ import Link from "next/link";
 
 interface CarDetail {
   name : string
-  price : string
+  price : number
 }
 
 const Footer = ({name, price}: CarDetail) => {
