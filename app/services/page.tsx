@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link"
-import Footer from "../components/footer/Footer";
+import Footer from "../components/Footer/footer";
 import Header from "../components/Header/Header";
 import cssStyle from "./services.module.css";
 import React, { useState } from "react";
