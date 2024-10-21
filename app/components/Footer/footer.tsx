@@ -3,7 +3,7 @@ import Link from "next/link";
 
 interface CarDetail {
   name : string
-  price : string
+  price : number
 }
 
 const Footer = ({name, price}: CarDetail) => {
@@ -54,23 +54,7 @@ const Footer = ({name, price}: CarDetail) => {
             </Link>
       </ul>
     </div>
-    {/* <div className={styles.socialLinks}>
-      <h3>Follow Us</h3>
-      <div className={styles.socialIcons}>
-        <a href="#" className={styles.socialIcon}>
-          <i className="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" className={styles.socialIcon}>
-          <i className="fab fa-twitter"></i>
-        </a>
-        <a href="#" className={styles.socialIcon}>
-          <i className="fab fa-instagram"></i>
-        </a>
-        <a href="#" className={styles.socialIcon}>
-          <i className="fab fa-linkedin-in"></i>
-        </a>
-      </div>
-    </div> */}
+ 
   </div>
 </div>
 <div className={styles.copyright}>
