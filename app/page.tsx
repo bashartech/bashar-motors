@@ -13,7 +13,7 @@ export default function Home() {
      <Section1 />
      <SwiperComponent />
      <Section3 />
-     <Footer name = "Product Name" price = "Price"/>
+     <Footer name = "Product Name" price = {0} />
     </div>
   );
 }
