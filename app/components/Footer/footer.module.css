@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+.footer {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  padding: 60px 0 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.formSection {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 40px;
+}
+
+.formSection h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #f7f7f7;
+}
+
+.form {
+  display: grid;
+  gap: 20px;
+}
+
+.formGroup {
+  position: relative;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #f7f7f7;
+  background-color: transparent;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.form input:hover{
+    background-color: #d1cbcb39;
+}
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: #fff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: #f7f7f7;
+  opacity: 0.7;
+}
+
+.error {
+  border-color: #ff6b6b !important;
+}
+
+.errorMessage {
+  color: #ff6b6b;
+  font-size: 12px;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+}
+
+.submitButton {
+  background-color: #f7f7f7;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #fff;
+  transform: translateY(-2px);
+}
+
+.linksSection {
+  flex: 0 0 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.navLinks,
+.socialLinks {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+.navLinks h3,
+.socialLinks h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #f7f7f7;
+}
+
+.navLinks ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navLinks ul li {
+  margin-bottom: 10px;
+}
+
+.navLinks ul li a {
+  color: #f7f7f7;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.navLinks ul li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 15px;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #f7f7f7;
+  color: #000;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+  background-color: #fff;
+  transform: translateY(-2px);
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #f7f7f7;
+  font-size: 14px;
+  color: #f7f7f7;
+}
+
+@media (min-width: 768px) {
+  .formSection {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+
+  .linksSection {
+    flex: 0 0 35%;
+    max-width: 35%;
+  }
+
+  .navLinks,
+  .socialLinks {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form textarea {
+    grid-column: span 2;
+  }
+
+  .submitButton {
+    grid-column: span 2;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.formGroup {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.formGroup:nth-child(1) { animation-delay: 0.1s; }
+.formGroup:nth-child(2) { animation-delay: 0.2s; }
+.formGroup:nth-child(3) { animation-delay: 0.3s; }
+.formGroup:nth-child(4) { animation-delay: 0.4s; }
+.formGroup:nth-child(5) { animation-delay: 0.5s; }
+.formGroup:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.navLinks ul li {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+.navLinks ul li:nth-child(1) { animation-delay: 0.1s; }
+.navLinks ul li:nth-child(2) { animation-delay: 0.2s; }
+.navLinks ul li:nth-child(3) { animation-delay: 0.3s; }
+.navLinks ul li:nth-child(4) { animation-delay: 0.4s; }
+.navLinks ul li:nth-child(5) { animation-delay: 0.5s; }
