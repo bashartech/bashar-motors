@@ -1,3 +1,5 @@
+"use client"
+import { useState } from 'react';
 import styles from './footer.module.css';
 import Link from "next/link";
 
@@ -6,7 +8,18 @@ interface CarDetail {
   price : number
 }
 
-const Footer = ({name, price}: CarDetail) => {
+const Footer = ({name:initialName, price:initialPrice}: CarDetail) => {
+
+  const [name, setName] = useState(initialName);
+  const [price, setPrice] = useState(initialPrice);
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  };
+
+  const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPrice(Number(e.target.value)); // Ensure price is a number
+  };
 
   return (
     <footer className={styles.footer} id='footer'>
@@ -16,10 +29,10 @@ const Footer = ({name, price}: CarDetail) => {
     <h2>Product Inquiry</h2>
     <form className={styles.form} id="product-inquiry-form">
       <div className={styles.formGroup}>
-        <input type="text" name="productname" value = {name} placeholder="Product Name"  required />
+        <input type="text" name="productname" value = {name} placeholder="Product Name" onChange={handleNameChange}  required />
       </div>
       <div className={styles.formGroup}>
-        <input type="text" name="price" value = {price} placeholder="Price"  required />
+        <input type="text" name="price" value = {price} placeholder="Price" onChange={handlePriceChange} required />
       </div>
       <div className={styles.formGroup}>
         <input type="email" name="email" placeholder="Email"  required />
