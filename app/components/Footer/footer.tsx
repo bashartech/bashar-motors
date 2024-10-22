@@ -1,5 +1,3 @@
-"use client";
-import { useState } from "react";
 import styles from "./footer.module.css";
 import Link from "next/link";
 
@@ -8,17 +6,7 @@ interface CarDetail {
   price: number;
 }
 
-const Footer = ({ name: initialName, price: initialPrice }: CarDetail) => {
-  const [name, setName] = useState(initialName);
-  const [price, setPrice] = useState(initialPrice);
-
-  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-  };
-
-  const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPrice(Number(e.target.value)); // Ensure price is a number
-  };
+const Footer = ({ name, price}: CarDetail) => {
 
   return (
     <footer className={styles.footer} id="footer">
@@ -32,7 +20,6 @@ const Footer = ({ name: initialName, price: initialPrice }: CarDetail) => {
                 name="productname"
                 value={name}
                 placeholder="Product Name"
-                onChange={handleNameChange}
                 required
               />
             </div>
@@ -42,8 +29,7 @@ const Footer = ({ name: initialName, price: initialPrice }: CarDetail) => {
                 name="price"
                 value={price}
                 placeholder="Price"
-                onChange={handlePriceChange}
-                required
+                 required
               />
             </div>
             <div className={styles.formGroup}>
