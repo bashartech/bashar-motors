@@ -24,7 +24,7 @@ align-items: center;
 }
 .box{
     width: 700px;
-    /* margin-left: 100px; */
+    padding:5px;
 }
 .btn2{
     background-color: #fff;
@@ -44,3 +44,8 @@ align-items: center;
     color: white;
     border: 1px solid white;
 }
+@media (max-width:400px) {
+    .heading{
+        font-size: 50px;
+    }
+  }
