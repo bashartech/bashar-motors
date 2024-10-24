@@ -1,9 +1,11 @@
+
 "use client";
-import Link from "next/link"
+
+import { useState, useCallback } from "react";
+import Link from "next/link";
 import Footer from "../components/Footer/footer";
 import Header from "../components/Header/Header";
 import cssStyle from "./services.module.css";
-import React, { useState, useCallback } from "react";
 
 interface Car {
   name: string;
@@ -11,7 +13,7 @@ interface Car {
   imageUrl: string;
 }
 
-const ServicesPage: React.FC = () => {
+export default function ServicesPage() {
   const [searchBar, setSearchBar] = useState<string>("");
   const [cars] = useState<Car[]>([
     { 
@@ -157,16 +159,16 @@ const ServicesPage: React.FC = () => {
           { name: 'Red Phoenix', imageUrl: 'https://i.pinimg.com/736x/25/36/d3/2536d38bca2c61466e6df72a9dc4d767.jpg', price: 39000 },
           { name: 'Black Widow', imageUrl: 'https://img.freepik.com/premium-photo/nighttime-marvel-modern-sports-car-urban-setting_1000764-4491.jpg', price: 52000 },
           { name: 'Blue Hurricane', imageUrl: 'https://img.freepik.com/premium-photo/car-that-is-powered-by-turbocharged-engine_551707-623.jpg', price: 60000 },
-           { name: 'Golden Typhoon', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2OEFhjwLl837e5l72sP9KUyNkO5MHijBpcyoQJNF7xHMDobfF7Bbw5erFyR6r1cuuhs8&usqp=CAU', price: 43000 },
-           { name: 'Cosmic Inferno', imageUrl: 'https://masterpiecer-images.s3.yandex.net/d36769d18b0b11ee9d0c261105627a54:upscaled', price: 38000 },
-           { name: 'Crimson Fury', imageUrl: 'https://i.pinimg.com/736x/ca/0a/54/ca0a5497b8730924c5ff8224257d4737.jpg', price: 51000 },
-           { name: 'Neon Blitz', imageUrl: 'https://i.pinimg.com/736x/20/99/a5/2099a50705ac7f037d4225bf7fa70180.jpg', price: 47000 },
-           { name: 'Aurora Flame', imageUrl: 'https://i.pinimg.com/736x/ca/0a/54/ca0a5497b8730924c5ff8224257d4737.jpg', price: 61000 },
-           { name: 'StarChaser', imageUrl: 'https://i.pinimg.com/736x/19/49/f9/1949f97c6401d11baf47ed2263350ae3.jpg', price: 54500 },
-           { name: 'Frost Raptor', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaHAHlIOx-S_bLZott97DOV0fABDAdSpSWNwJ1Mjslvh82bsBAVX32K75OFdFLQWbr2qE&usqp=CAU', price: 49000 },
-           { name: 'Obsidian X', imageUrl: 'https://static1.hotcarsimages.com/wordpress/wp-content/uploads/2022/05/Morand-Hypercar-1-Cropped.jpg', price: 70000 },
-           { name: 'Solar Wave', imageUrl: 'https://i.pinimg.com/736x/dd/fb/53/ddfb5364d61bb526a7e1f6733b9d2c7c.jpg', price: 45000 },
-           { name: 'Midnight Rider', imageUrl: 'https://i.pinimg.com/736x/4e/ee/67/4eee6730b179871c9773b0cb25f6d952.jpg', price: 57000 },
+          { name: 'Golden Typhoon', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2OEFhjwLl837e5l72sP9KUyNkO5MHijBpcyoQJNF7xHMDobfF7Bbw5erFyR6r1cuuhs8&usqp=CAU', price: 43000 },
+          { name: 'Cosmic Inferno', imageUrl: 'https://masterpiecer-images.s3.yandex.net/d36769d18b0b11ee9d0c261105627a54:upscaled', price: 38000 },
+          { name: 'Crimson Fury', imageUrl: 'https://i.pinimg.com/736x/ca/0a/54/ca0a5497b8730924c5ff8224257d4737.jpg', price: 51000 },
+          { name: 'Neon Blitz', imageUrl: 'https://i.pinimg.com/736x/20/99/a5/2099a50705ac7f037d4225bf7fa70180.jpg', price: 47000 },
+          { name: 'Aurora Flame', imageUrl: 'https://i.pinimg.com/736x/ca/0a/54/ca0a5497b8730924c5ff8224257d4737.jpg', price: 61000 },
+          { name: 'StarChaser', imageUrl: 'https://i.pinimg.com/736x/19/49/f9/1949f97c6401d11baf47ed2263350ae3.jpg', price: 54500 },
+          { name: 'Frost Raptor', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaHAHlIOx-S_bLZott97DOV0fABDAdSpSWNwJ1Mjslvh82bsBAVX32K75OFdFLQWbr2qE&usqp=CAU', price: 49000 },
+          { name: 'Obsidian X', imageUrl: 'https://static1.hotcarsimages.com/wordpress/wp-content/uploads/2022/05/Morand-Hypercar-1-Cropped.jpg', price: 70000 },
+          { name: 'Solar Wave', imageUrl: 'https://i.pinimg.com/736x/dd/fb/53/ddfb5364d61bb526a7e1f6733b9d2c7c.jpg', price: 45000 },
+          { name: 'Midnight Rider', imageUrl: 'https://i.pinimg.com/736x/4e/ee/67/4eee6730b179871c9773b0cb25f6d952.jpg', price: 57000 },
           { name: 'Volcanic Surge', imageUrl: 'https://d1gymyavdvyjgt.cloudfront.net/drive/images/uploads/authors/ws_cropper/19_0x0_790x520_790x0_best-ev-sports-cars-lotus-evija.jpg', price: 85000 }
   ]);
 
