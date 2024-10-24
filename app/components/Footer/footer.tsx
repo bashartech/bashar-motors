@@ -1,3 +1,4 @@
+"use client"
 import styles from "./footer.module.css";
 import Link from "next/link";
 
@@ -6,30 +7,37 @@ interface CarDetail {
   price: number;
 }
 
-const Footer = ({ name, price}: CarDetail) => {
+const Footer = ({ name, price }: CarDetail) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    // Add form submission logic here
+    console.log("Form submitted with", { name, price });
+  };
 
   return (
     <footer className={styles.footer} id="footer">
       <div className={styles.container}>
         <div className={styles.formSection}>
           <h2>Product Inquiry</h2>
-          <form className={styles.form} id="product-inquiry-form">
+          <form className={styles.form} id="product-inquiry-form" onSubmit={handleSubmit}>
             <div className={styles.formGroup}>
               <input
                 type="text"
                 name="productname"
                 value={name}
                 placeholder="Product Name"
+                readOnly
                 required
               />
             </div>
             <div className={styles.formGroup}>
               <input
-                type="text"
+                type="number"
                 name="price"
                 value={price}
                 placeholder="Price"
-                 required
+                readOnly
+                required
               />
             </div>
             <div className={styles.formGroup}>
@@ -67,37 +75,12 @@ const Footer = ({ name, price}: CarDetail) => {
           <div className={styles.navLinks}>
             <h3>Quick Links</h3>
             <ul>
-              <Link className="hover:text-slate-400" href={"/"}>
-                <li className="hover:text-slate-400">Home</li>
-              </Link>
-              <Link href={"#about"}>
-                <li className="hover:text-slate-400">About</li>
-              </Link>
-              <Link href={"/services"}>
-                <li className="hover:text-slate-400">Products</li>
-              </Link>
-              <Link href={"#services"}>
-                <li className="hover:text-slate-400">Services</li>
-              </Link>
+              <li><Link className="hover:text-slate-400" href="/">Home</Link></li>
+              <li><Link className="hover:text-slate-400" href="#about">About</Link></li>
+              <li><Link className="hover:text-slate-400" href="/services">Products</Link></li>
+              <li><Link className="hover:text-slate-400" href="#services">Services</Link></li>
             </ul>
           </div>
-          {/* <div className={styles.socialLinks}>
-      <h3>Follow Us</h3>
-      <div className={styles.socialIcons}>
-        <a href="#" className={styles.socialIcon}>
-          <i className="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" className={styles.socialIcon}>
-          <i className="fab fa-twitter"></i>
-        </a>
-        <a href="#" className={styles.socialIcon}>
-          <i className="fab fa-instagram"></i>
-        </a>
-        <a href="#" className={styles.socialIcon}>
-          <i className="fab fa-linkedin-in"></i>
-        </a>
-      </div>
-    </div> */}
         </div>
       </div>
       <div className={styles.copyright}>
