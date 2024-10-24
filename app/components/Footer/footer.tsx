@@ -1,5 +1,4 @@
-"use client"
-import React from "react";
+
 import styles from "./footer.module.css";
 import Link from "next/link";
 
@@ -9,18 +8,13 @@ interface CarDetail {
 }
 
 const Footer = ({ name, price }: CarDetail) => {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // Add form submission logic here
-    console.log("Form submitted with", { name, price });
-  };
-
+  
   return (
     <footer className={styles.footer} id="footer">
       <div className={styles.container}>
         <div className={styles.formSection}>
           <h2>Product Inquiry</h2>
-          <form className={styles.form} id="product-inquiry-form" onSubmit={handleSubmit}>
+          <form className={styles.form} id="product-inquiry-form">
             <div className={styles.formGroup}>
               <input
                 type="text"
