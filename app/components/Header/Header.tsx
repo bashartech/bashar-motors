@@ -71,7 +71,7 @@ export default function Header() {
             <Link href={"#services"}>
              <li className="text-white hover:text-slate-400 cursor-pointer"  onClick={closeMenu} >Services</li>
             </Link>
-            <Link href={"#contact"}>
+            <Link href={"#footer"}>
              <li className="text-white hover:text-slate-400 cursor-pointer"  onClick={closeMenu} >Contact</li>
             </Link>
         </ul>
