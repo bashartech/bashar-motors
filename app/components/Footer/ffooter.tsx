@@ -105,7 +105,7 @@ const Footer = ({ name, price }: CarDetail) => {
   const [message, setMessage] = useState("");
 
   const WEBHOOK_URL =
-    "https://bashartech.app.n8n.cloud/webhook-test/a6a45c20-f5bf-4fbf-9453-42cfa6b72d95";
+    "https://bashartech.app.n8n.cloud/webhook/a6a45c20-f5bf-4fbf-9453-42cfa6b72d95";
 
   const handleSend = async (e: FormEvent) => {
     e.preventDefault();
