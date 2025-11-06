@@ -24,9 +24,13 @@ align-items: center;
 }
 .box{
     width: 700px;
+<<<<<<< HEAD
     padding: 5px;
     /* margin: 20px; */
     /* margin-left: 100px; */
+=======
+    padding:5px;
+>>>>>>> 290414e2d0b00decc234c5b552f3bca9db0e7ead
 }
 .btn2{
     background-color: #fff;
@@ -50,4 +54,8 @@ align-items: center;
     .heading{
         font-size: 50px;
     }
+<<<<<<< HEAD
   }
+=======
+  }
+>>>>>>> 290414e2d0b00decc234c5b552f3bca9db0e7ead
