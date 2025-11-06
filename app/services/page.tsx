@@ -230,9 +230,5 @@ export default function ServicesPage() {
 
       <Footer name={selectedCarName} price={selectedCarPrice} />
     </>
-  );
-<<<<<<< HEAD
+  )
 }
-=======
-}
->>>>>>> 290414e2d0b00decc234c5b552f3bca9db0e7ead
